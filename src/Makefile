@@ -50,7 +50,7 @@ YACC_OBJS = y.tab.o
 
 OBJS :=  $(CPP_OBJS) $(LEX_OBJS) $(YACC_OBJS)
 
-.PHONY: clean
+.PHONY: clean clean_obj distclean
 
 all: $(PROG)
 
@@ -84,4 +84,6 @@ distclean: clean
 	rm -f *.o */*.o
 	rm -f *.d */*.d
 
+clean_obj:
+	rm -f */*.o */*.d *.o *.d 
 -include $(CPP_DEPS)

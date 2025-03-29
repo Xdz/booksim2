@@ -32,7 +32,7 @@ long* aa;   /* destination */
 int n;      /* array length (must be at least KK) */
 #endif
 {
-  auto int i, j;
+  int i, j;
   for (j = 0;j < KK;j++) aa[j] = ran_x[j];
   for (;j < n;j++) aa[j] = mod_diff(aa[j - KK], aa[j - LL]);
   for (i = 0;i < LL;i++, j++) ran_x[i] = mod_diff(aa[j - KK], aa[j - LL]);
@@ -57,9 +57,9 @@ void ran_start(seed)    /* do this before using ran_array */
 long seed;            /* selector for different streams */
 #endif
 {
-  auto int t, j;
+  int t, j;
   long x[KK + KK - 1];              /* the preparation buffer */
-  auto long ss = (seed + 2) & (MM - 2);
+  long ss = (seed + 2) & (MM - 2);
   for (j = 0;j < KK;j++)
   {
     x[j] = ss;                      /* bootstrap the buffer */
@@ -100,7 +100,7 @@ long ran_arr_cycle()
 #include <stdio.h>
 int main()
 {
-  auto int m; long a[2009];
+  int m; long a[2009];
   ran_start(310952L);
   for (m = 0;m <= 2009;m++) ran_array(a, 1009);
   printf("%ld\n", a[0]);             /* 995235265 */

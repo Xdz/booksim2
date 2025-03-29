@@ -41,8 +41,6 @@
 #include <iostream>
 #include <fstream>
 
-
-
 #include <sstream>
 #include "booksim.hpp"
 #include "routefunc.hpp"
@@ -50,9 +48,9 @@
 #include "booksim_config.hpp"
 #include "trafficmanager.hpp"
 #include "random_utils.hpp"
-#include "network.hpp"
+#include "networks/network.hpp"
 #include "injection.hpp"
-#include "power_module.hpp"
+#include "power/power_module.hpp"
 
 
 

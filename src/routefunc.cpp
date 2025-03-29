@@ -42,13 +42,13 @@
 
 #include "booksim.hpp"
 #include "routefunc.hpp"
-#include "kncube.hpp"
+#include "networks/kncube.hpp"
 #include "random_utils.hpp"
 #include "misc_utils.hpp"
-#include "fattree.hpp"
-#include "tree4.hpp"
-#include "qtree.hpp"
-#include "cmesh.hpp"
+#include "networks/fattree.hpp"
+#include "networks/tree4.hpp"
+#include "networks/qtree.hpp"
+#include "networks/cmesh.hpp"
 
 
 
@@ -1914,7 +1914,7 @@ void chaos_mesh( const Router *r, const Flit *f,
 
 //=============================================================
 
-void InitializeRoutingMap( const Configuration & config )
+void InitializeRoutingMap(const Configuration& config)
 {
 
   gNumVCs = config.GetInt( "num_vcs" );
