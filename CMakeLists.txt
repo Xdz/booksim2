@@ -4,6 +4,8 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_COMPILER g++)
 
+set(CMAKE_BUILD_TYPE Debug)
+
 file(GLOB COMMON_CXX_FILES
     src/*.cc
     src/*.cpp
@@ -42,6 +44,14 @@ add_library(Networks OBJECT ${NETWORK_CXX_FILES})
 add_library(CommonParseFiles OBJECT ${COMMON_PARSE_FILES})
 add_library(Common_CXX_Files OBJECT ${COMMON_CXX_FILES})
 
+#根据debug还是release设置输出目录
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/debug)
+elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/release)
+else()
+    message(STATUS "Unknown build type: ${CMAKE_BUILD_TYPE}")
+endif()
 
 # 添加最终可执行文件
 add_executable(BookSim
