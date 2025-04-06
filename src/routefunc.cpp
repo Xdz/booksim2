@@ -1913,7 +1913,8 @@ void chaos_mesh( const Router *r, const Flit *f,
 }
 
 //=============================================================
-
+//前缀g可能代表graph,即网络的有向图的抽象相关的参数
+//VC是virtual channel的缩写
 void InitializeRoutingMap(const Configuration& config)
 {
 
